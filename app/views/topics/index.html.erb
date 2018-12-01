@@ -13,8 +13,16 @@
               <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
             <% end %>
            <% end %>
+
+         <% @comments.each do |comment| %>
+          <% if user_signed_in? && comment.user == current_user %>
+          <p><%= link_to 'Delete', comment_path(comment), method: :delete %></p>
+          <% end %>
+
            <%= link_to new_comment_path(topic_id: topic.id), method: :post do %>
             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+
+
             <p class="topic-text">
               <%= topic.description %>
             </p>
