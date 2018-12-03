@@ -18,13 +18,6 @@ class TopicsController < ApplicationController
     end
   end
 
-  def create
-  @topic = Topic.includes(:user).find(params[:id])
-  @comments = @topic.comments.includes(:user).all
-  @comment  = @topic.comments.build(user_id: current_user.id) if current_user
-  end
-
-
   private
   def topic_params
     params.require(:topic).permit(:image, :description)
