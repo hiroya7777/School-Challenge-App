@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
 
-  resource :comments,only:[:new, :create]
+  resources :comments,only:[:new, :create]
 end
