@@ -14,10 +14,11 @@ Rails.application.routes.draw do
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
 
-
-  resources :topics
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
 
-  resource :comments,only:[:new, :create]
+  resources :topics do
+  resources :comments,only:[:new, :create]
+
+end
 end
