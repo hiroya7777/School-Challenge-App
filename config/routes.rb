@@ -1,3 +1,9 @@
+#get ページを取得するときに使う通信手段
+#post データを作成するときに使う通信手段
+#put データを置換するときに使う通信手段
+#patch データを部分的に更新するときに使う通信手段
+#delete データを削除するときに使う通信手段
+
 Rails.application.routes.draw do
 
  get 'topics/new'
