@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
+  gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
 end
 
 group :development do
